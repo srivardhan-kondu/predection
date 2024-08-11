@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algerian Forest Fire Prediction</title>
+</head>
+<body>
+    <h1>Algerian Forest Fire Prediction</h1>
+    <form action="{{ url_for('predict_datapoint') }}" method="post">
+        <label for="temperature">Temperature (°C):</label>
+        <input type="text" id="temperature" name="Temperature" placeholder="Temperature" required="required">
+        <br><br>
+
+        <label for="rh">Relative Humidity (RH) (%):</label>
+        <input type="text" id="rh" name="RH" placeholder="RH" required="required">
+        <br><br>
+
+        <label for="ws">Wind Speed (Ws) (km/h):</label>
+        <input type="text" id="ws" name="Ws" placeholder="Wind Speed" required="required">
+        <br><br>
+
+        <label for="rain">Rain (mm):</label>
+        <input type="text" id="rain" name="Rain" placeholder="Rain" required="required">
+        <br><br>
+
+        <label for="ffmc">FFMC (Fine Fuel Moisture Code):</label>
+        <input type="text" id="ffmc" name="FFMC" placeholder="FFMC" required="required">
+        <br><br>
+
+        <label for="dmc">DMC (Duff Moisture Code):</label>
+        <input type="text" id="dmc" name="DMC" placeholder="DMC" required="required">
+        <br><br>
+
+        <label for="dc">DC (Drought Code):</label>
+        <input type="text" id="dc" name="DC" placeholder="DC" required="required">
+        <br><br>
+
+        <label for="isi">ISI (Initial Spread Index):</label>
+        <input type="text" id="isi" name="ISI" placeholder="ISI" required="required">
+        <br><br>
+
+        <label for="bui">BUI (Build Up Index):</label>
+        <input type="text" id="bui" name="BUI" placeholder="BUI" required="required">
+        <br><br>
+
+        <label for="fwi">FWI (Fire Weather Index):</label>
+        <input type="text" id="fwi" name="FWI" placeholder="FWI" required="required">
+        <br><br>
+
+        <label for="classes">Classes:</label>
+        <input type="text" id="classes" name="Classes" placeholder="Classes" required="required">
+        <br><br>
+
+        <label for="region">Region:</label> <!-- Updated this label -->
+        <input type="text" id="region" name="Region" placeholder="Region" required="required">
+        <br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    <h2>
+        The FWI Prediction is: {{ result }}
+    </h2>
+</body>
+</html>
